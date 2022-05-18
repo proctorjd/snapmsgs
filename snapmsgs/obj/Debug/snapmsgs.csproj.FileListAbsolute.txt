@@ -1,0 +1,11 @@
+C:\Users\paula\Documents\snapmsgs\snapmsgs\bin\Debug\snapmsgs.exe.config
+C:\Users\paula\Documents\snapmsgs\snapmsgs\bin\Debug\snapmsgs.exe
+C:\Users\paula\Documents\snapmsgs\snapmsgs\bin\Debug\snapmsgs.pdb
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.csproj.AssemblyReference.cache
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.csproj.SuggestedBindingRedirects.cache
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.Form1.resources
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.Properties.Resources.resources
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.csproj.GenerateResource.cache
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.csproj.CoreCompileInputs.cache
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.exe
+C:\Users\paula\Documents\snapmsgs\snapmsgs\obj\Debug\snapmsgs.pdb
