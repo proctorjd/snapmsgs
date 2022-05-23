@@ -1,0 +1,10 @@
+{
+  "encKey" : "",
+  "username" : "",
+  "payload" : {
+    "recipients" : [
+      { "username" :  ""}
+    ],
+    "message" : ""
+  }
+}

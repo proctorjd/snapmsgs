@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client 3</title>
+    <script>
+        var uname = "client3@utest.com";
+        var ukey = "1234KYZ";
+        var regjson = {
+            "username" : uname,
+            "key": ukey
+        };
+        const url = "http://localhost:5150/reg";
+        fetch(url, {
+            method : "POST",
+            body : JSON.stringify(regjson)
+        }).then(
+            response => response.text()
+        ).then(
+            html => console.log(html)
+        );
+    </script>
+    <style>
+        .friendList span{
+            display: table;
+        }
+        #msgArea {
+            width: 250px;
+            height: 200px;
+            border: thin solid #000;
+            overflow-y: auto;
+        }
+
+        .fromMsg, .toMsg {
+            display: block;
+            width: 100%;
+        }
+
+        .fromMsg {
+            text-align: right;
+        }
+
+        .toMsg {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h3>Client 3</h3>
+    <table>
+        <tr>
+            <td class="friendList" rowspan="3">
+                <span>
+                    <input type="checkbox" name="friends_rc" value="client1@utest.com" checked />Client 1
+                </span>
+                <span>
+                    <input type="checkbox" name="friends_rc" value="client3@utest.com"  />Client 3
+                </span>
+            </td>
+            <td>
+                <div id="msgArea">
+
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id="txtMsg" cols="30" rows="4"></textarea>
+            </td>
+            <td>
+                <button onclick="sendMsg()">Send Msg</button>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    // Create WebSocket connection.
+    const socket = new WebSocket('ws://localhost:5150/ws?uname='+uname);
+
+    // Connection opened
+    socket.addEventListener('open', function (event) {
+        console.log('Connected to the WS Server!')
+    });
+
+    // Connection closed
+    socket.addEventListener('close', function (event) {
+        console.log('Disconnected from the WS Server!')
+    });
+
+    // Listen for messages
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server ', event.data);
+        var dd = {};
+        if(/^{|$}/.test(event.data)){
+            dd = JSON.parse(event.data);
+        }
+        //console.log('dd : ',dd);
+        if(dd.msg.payload){
+            //var mg = document.getElementById("recMsg");
+            //mg.value = mg.value +"\n" + dd.msg.payload.message;
+
+            var mmg = document.createElement("span");
+            mmg.innerText = dd.msg.payload.message;
+            mmg.className = "toMsg";
+            document.getElementById("msgArea").appendChild(mmg);
+        }
+    });
+    // Send a msg to the websocket
+    const sendMsg = () => {
+        var msg = document.getElementById('txtMsg').value;
+        var mmg = document.createElement("span");
+        mmg.innerText = msg;
+        mmg.className = "fromMsg";
+        document.getElementById("msgArea").appendChild(mmg);
+        msg = msg.trim();
+        var recps = getCheckedFriends();
+        var mmsg = [];
+        for(var i =0; i < recps.length;i++){
+            mmsg.push({
+                "encKey" : ukey,
+                "username" : uname,
+                "payload" : {
+                    "recipients" : recps[i].username,
+                    "message" : msg,
+                    "datetime" : new Date()
+                }
+            })
+        }
+        document.getElementById('txtMsg').value = "";
+        console.log('recps :',recps);
+        socket.send(JSON.stringify(mmsg));
+    }
+
+    function getCheckedFriends(){
+        var fds = document.querySelectorAll('input[name=friends_rc]:checked');
+        var flist = [];
+        for(var i = 0; i < fds.length; i++){
+            flist.push({ "username" : fds[i].value });
+        }
+        return flist;
+    }
+
+</script>
+</html>
