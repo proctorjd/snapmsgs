@@ -9,8 +9,9 @@ namespace POC_Server
       
 
         //Getting server online
-        static void Main(string[] args)
+        static void Main()
         {
+            ServerSocket.AddWebSocketService<Chat>("/chat");
             ServerSocket.Start();
             Console.WriteLine("Server started. Press any key to stop the server.");
             Console.ReadKey();

@@ -5,7 +5,6 @@ C:\Users\paula\Documents\snapmsgs\POC\bin\Debug\net6.0-windows\POC.dll
 C:\Users\paula\Documents\snapmsgs\POC\bin\Debug\net6.0-windows\POC.pdb
 C:\Users\paula\Documents\snapmsgs\POC\bin\Debug\net6.0-windows\websocket-sharp.dll
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.csproj.AssemblyReference.cache
-C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.Form1.resources
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.csproj.GenerateResource.cache
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.AssemblyInfoInputs.cache
@@ -17,3 +16,4 @@ C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\refint\POC.dll
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.pdb
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.genruntimeconfig.cache
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\ref\POC.dll
+C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.Chat.resources
