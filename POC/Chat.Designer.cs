@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.txtSendMessage = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtbOutput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(745, 494);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtbOutput.Location = new System.Drawing.Point(12, 12);
+            this.rtbOutput.Name = "rtbOutput";
+            this.rtbOutput.ReadOnly = true;
+            this.rtbOutput.Size = new System.Drawing.Size(745, 494);
+            this.rtbOutput.TabIndex = 0;
+            this.rtbOutput.Text = "";
             // 
             // txtSendMessage
             // 
+            this.txtSendMessage.Enabled = false;
             this.txtSendMessage.Location = new System.Drawing.Point(12, 512);
             this.txtSendMessage.Name = "txtSendMessage";
             this.txtSendMessage.PlaceholderText = "Write your message...";
@@ -53,6 +54,7 @@
             // 
             // btnSend
             // 
+            this.btnSend.Enabled = false;
             this.btnSend.Location = new System.Drawing.Point(555, 512);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(106, 29);
@@ -78,7 +80,7 @@
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtSendMessage);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbOutput);
             this.Name = "Chat";
             this.Text = "Chat";
             this.ResumeLayout(false);
@@ -86,9 +88,14 @@
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
-        private RichTextBox richTextBox1;
+        private RichTextBox rtbOutput;
         private TextBox txtSendMessage;
         private Button btnSend;
         private Button btnConnect;
