@@ -36,7 +36,7 @@
             // 
             // rtbOutput
             // 
-            this.rtbOutput.Location = new System.Drawing.Point(12, 12);
+            this.rtbOutput.Location = new System.Drawing.Point(21, 12);
             this.rtbOutput.Name = "rtbOutput";
             this.rtbOutput.ReadOnly = true;
             this.rtbOutput.Size = new System.Drawing.Size(745, 494);
@@ -51,6 +51,7 @@
             this.txtSendMessage.PlaceholderText = "Write your message...";
             this.txtSendMessage.Size = new System.Drawing.Size(537, 27);
             this.txtSendMessage.TabIndex = 1;
+         
             // 
             // btnSend
             // 
@@ -71,6 +72,7 @@
             this.btnConnect.TabIndex = 3;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.BtnConnect_Click);
             // 
             // Chat
             // 

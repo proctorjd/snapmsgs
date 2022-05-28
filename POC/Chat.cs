@@ -8,7 +8,7 @@ namespace POC
 {
     public partial class Chat : Form
     {
-        private readonly WebSocket _socket = new("ws://localhost:9876");
+        private readonly WebSocket _socket = new("ws://localhost:9876/chat");
      
         public Chat()
         {
@@ -60,5 +60,28 @@ namespace POC
         {
 
         }
+
+        private void BtnConnect_Click(object sender, EventArgs e)
+        {
+            if (btnSend.Enabled)
+            {
+                rtbOutput.AppendText("Disconnecting to Server..." + Environment.NewLine);
+                _socket.Close();
+                return;
+            }
+
+            rtbOutput.AppendText("Connecting to Server..." + Environment.NewLine);
+            _socket.Connect();
+        }
+
+        private void BtnSend_Click(object sender, EventArgs e)
+        {
+            _socket.Send(txtSendMessage.Text);
+            txtSendMessage.Clear();
+          
+            
+        }
+
+      
     }
 }
