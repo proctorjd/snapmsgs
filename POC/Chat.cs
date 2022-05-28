@@ -25,11 +25,8 @@ namespace POC
 
         private void Socket_OnMessage(object sender, WebSocketSharp.MessageEventArgs e)
         {
-            var output = new StringBuilder()
-                .AppendLine("Message received: {e.Data}");
-            rtbOutput.Text = output.ToString(); 
-
-           
+            var output = new StringBuilder().AppendLine("Message received: {e.Data}");
+            rtbOutput.AppendText(output.ToString());   
         }
 
         private void Socket_OnError(object sender, WebSocketSharp.ErrorEventArgs e)
@@ -37,7 +34,7 @@ namespace POC
             MessageBox.Show(e.Exception.ToString());
         }
 
-        private void Socket_OnClose(object sender, EventArgs e)
+        private void Socket_OnClose(object sender, CloseEventArgs e)
 
         {
             rtbOutput.AppendText("Disconnected from Server." + Environment.NewLine);
@@ -61,27 +58,30 @@ namespace POC
 
         }
 
+
         private void BtnConnect_Click(object sender, EventArgs e)
         {
             if (btnSend.Enabled)
             {
-                rtbOutput.AppendText("Disconnecting to Server..." + Environment.NewLine);
+                rtbOutput.AppendText("Disonnecting To Server..." + Environment.NewLine);
                 _socket.Close();
+
                 return;
             }
 
-            rtbOutput.AppendText("Connecting to Server..." + Environment.NewLine);
+            rtbOutput.AppendText("Connecting To Server..." + Environment.NewLine);
             _socket.Connect();
         }
 
-        private void BtnSend_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e)
         {
             _socket.Send(txtSendMessage.Text);
             txtSendMessage.Clear();
-          
-            
+
         }
 
-      
+
+
+
     }
 }
