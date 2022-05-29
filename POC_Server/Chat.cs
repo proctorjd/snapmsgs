@@ -1,6 +1,9 @@
 ﻿
+using System;
+using System.Text;
 using WebSocketSharp;
 using WebSocketSharp.Server;
+
 
 namespace POC_Server
 {
@@ -25,6 +28,16 @@ namespace POC_Server
         protected override void OnMessage(MessageEventArgs e)
         {
             Console.WriteLine($"Server received message from: {ID}: {e.Data}");
+
+            var output = new StringBuilder()
+            .AppendFormat("{0} - {1}:", DateTime.UtcNow.ToString("mm: hh tt"), ID).AppendLine()
+            .AppendLine(e.Data);
+
+
+            Sessions.Broadcast(output.ToString());
+            ///Sessions.Broadcast(e.Data);
+
+
         }
     }
 }

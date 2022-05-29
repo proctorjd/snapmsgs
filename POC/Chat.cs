@@ -23,16 +23,13 @@ namespace POC
             InitializeComponent();
         }
 
-        private void Socket_OnMessage(object sender, WebSocketSharp.MessageEventArgs e)
-        {
-            var output = new StringBuilder().AppendLine("Message received: {e.Data}");
-            rtbOutput.AppendText(output.ToString());   
-        }
+        private void Socket_OnMessage(object sender, WebSocketSharp.MessageEventArgs e) =>
+            //var output = new StringBuilder().AppendLine($"Message received: {e.Data}");
+            //rtbOutput.AppendText(output.ToString());   
 
-        private void Socket_OnError(object sender, WebSocketSharp.ErrorEventArgs e)
-        {
-            MessageBox.Show(e.Exception.ToString());
-        }
+            rtbOutput.AppendText(e.Data);
+
+        private void Socket_OnError(object sender, WebSocketSharp.ErrorEventArgs e) => MessageBox.Show(e.Exception.ToString());
 
         private void Socket_OnClose(object sender, CloseEventArgs e)
 
@@ -52,13 +49,6 @@ namespace POC
             btnSend.Enabled = true;
         }
 
-        private void Chat_Load (object sender, EventArgs e)
-
-        {
-
-        }
-
-
         private void BtnConnect_Click(object sender, EventArgs e)
         {
             if (btnSend.Enabled)
@@ -73,7 +63,7 @@ namespace POC
             _socket.Connect();
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
+        private void BtnSend_Click(object sender, EventArgs e)
         {
             _socket.Send(txtSendMessage.Text);
             txtSendMessage.Clear();
