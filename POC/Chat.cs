@@ -9,7 +9,7 @@ namespace POC
     public partial class Chat : Form
     {
         private readonly WebSocket _socket = new("ws://localhost:9876/chat");
-     
+
         public Chat()
         {
 #pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
@@ -70,8 +70,15 @@ namespace POC
 
         }
 
+        private void TxtSendMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
 
-
+            _socket.Send(txtSendMessage.Text);
+            txtSendMessage.Clear();
+        }
 
     }
+
 }

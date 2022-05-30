@@ -47,11 +47,12 @@
             // 
             this.txtSendMessage.Enabled = false;
             this.txtSendMessage.Location = new System.Drawing.Point(12, 512);
+            this.txtSendMessage.Multiline = true;
             this.txtSendMessage.Name = "txtSendMessage";
             this.txtSendMessage.PlaceholderText = "Write your message...";
             this.txtSendMessage.Size = new System.Drawing.Size(537, 27);
             this.txtSendMessage.TabIndex = 1;
-         
+            this.txtSendMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSendMessage_KeyDown);
             // 
             // btnSend
             // 
@@ -90,10 +91,9 @@
 
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-            //throw new NotImplementedException();
-       // }
+      
+
+         
 
         #endregion
 
