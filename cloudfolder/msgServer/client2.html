@@ -11,7 +11,8 @@
             "username" : uname,
             "key": ukey
         };
-        const url = "http://localhost:5150/reg";
+        //const url = "http://localhost:5150/reg";
+        const url = "http://www.dfdubs.com/reg";
         fetch(url, {
             method : "POST",
             body : JSON.stringify(regjson)
@@ -85,7 +86,9 @@
 </body>
 <script>
     // Create WebSocket connection.
-    const socket = new WebSocket('ws://localhost:5150/ws?uname='+uname);
+    //var url = 'localhost:5150';
+    var xurl = 'snapmsg.dfdubs.com'
+    const socket = new WebSocket('ws://'+xurl+'/ws?uname='+uname);
 
     // Connection opened
     socket.addEventListener('open', function (event) {
