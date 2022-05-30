@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC", "POC.csproj", "{95108421-6540-44F1-8B41-C880D1E64DB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC", "POC.csproj", "{95108421-6540-44F1-8B41-C880D1E64DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC_Server", "..\POC_Server\POC_Server.csproj", "{227EF71D-3652-4CD8-9A2C-964CE1ECE642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC_Server", "..\POC_Server\POC_Server.csproj", "{227EF71D-3652-4CD8-9A2C-964CE1ECE642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC.Core", "..\POC.Core\POC.Core.csproj", "{EA8FB3E3-C86A-40CC-88BE-D9A37F1CBC95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{227EF71D-3652-4CD8-9A2C-964CE1ECE642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{227EF71D-3652-4CD8-9A2C-964CE1ECE642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{227EF71D-3652-4CD8-9A2C-964CE1ECE642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8FB3E3-C86A-40CC-88BE-D9A37F1CBC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8FB3E3-C86A-40CC-88BE-D9A37F1CBC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8FB3E3-C86A-40CC-88BE-D9A37F1CBC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8FB3E3-C86A-40CC-88BE-D9A37F1CBC95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

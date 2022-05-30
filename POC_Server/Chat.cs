@@ -12,10 +12,29 @@ namespace POC_Server
         protected override void OnOpen()
         {
             Console.WriteLine($"Client Connected: {ID}");
+
+            var output = new StringBuilder()
+            .AppendFormat("There are so many users logged in!", Sessions.Count).AppendLine()
+            .AppendLine();
+
+            foreach(var session in Sessions.Sessions)
+            {
+                if (session.ID == ID)
+                    continue;
+
+                output.AppendLine(session.ID);
+            }
+
+            Send(output.ToString());
+
+            Sessions.Broadcast($"User joined servier ID: {ID}");
+
+
+
         }
 
         protected override void OnClose(CloseEventArgs e)
-        {
+        { 
             Console.WriteLine($"Client Disconnected: {ID}");
         }
 

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iy3e8b69dqbjv9ziVstlrLCXRzUyZ0CzqUxMvKYAVXlak+QWqVLlWj02Tf0ab+wHf8YFls2gOS0F5iNFy7Eegw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\paula\\Documents\\snapmsgs\\POC.Core\\POC.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\paula\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -79,6 +79,8 @@ namespace POC
             txtSendMessage.Clear();
         }
 
+        private void rtbOutput_TextChanged(object sender, EventArgs e) 
+            => rtbOutput.ScrollToCaret();
     }
 
 }
