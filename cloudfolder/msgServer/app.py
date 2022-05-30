@@ -16,7 +16,10 @@ removeConnections = set()
 
 async def http_handler(request):
     post_data = await request.text()
-    userobj = json.loads(post_data)
+    try:
+        userobj = json.loads(post_data)
+    except ValueError:
+        return web.Response(text='Invalid json sent')
     # userTable.search( == )
     cur.execute("SELECT username FROM users WHERE username = ?", (userobj['username'],));
     row = cur.fetchone()
@@ -26,7 +29,7 @@ async def http_handler(request):
         cur.execute("INSERT INTO users (username, regkey) values (?, ?)", (userobj['username'], userobj['key']))
         con.commit()
 
-    return web.Response(text='Hello, world : '+post_data)
+    return web.Response(text='Success : '+post_data)
 
 
 async def websocket_handler(request):
@@ -45,7 +48,10 @@ async def websocket_handler(request):
             if msg.data == 'close':
                 await ws.close()
             else:
-                payload = json.loads(msg.data);
+                try:
+                    payload = json.loads(msg.data)
+                except ValueError:
+                    return ws
                 for pkg in payload:
                     cur.execute("INSERT INTO messages (json_msg) values (?)", (json.dumps(pkg),))
                 con.commit()
