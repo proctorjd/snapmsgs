@@ -13,21 +13,21 @@ namespace POC_Server
         {
             Console.WriteLine($"Client Connected: {ID}");
 
-            var output = new StringBuilder()
-            .AppendFormat("There are so many users logged in!", Sessions.Count).AppendLine()
-            .AppendLine();
+            //var output = new StringBuilder()
+           // .AppendFormat("There are so many users logged in!", Sessions.Count).AppendLine()
+            //.AppendLine();
 
-            foreach(var session in Sessions.Sessions)
-            {
-                if (session.ID == ID)
-                    continue;
+           // foreach(var session in Sessions.Sessions)
+           // {
+             //   if (session.ID == ID)
+                 //   continue;
 
-                output.AppendLine(session.ID);
-            }
+              //  output.AppendLine(session.ID);
+           // }
 
-            Send(output.ToString());
+          //  Send(output.ToString());
 
-            Sessions.Broadcast($"User joined servier ID: {ID}");
+           // Sessions.Broadcast($"User joined servier ID: {ID}");
 
 
 
