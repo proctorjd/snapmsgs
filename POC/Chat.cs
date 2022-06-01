@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using POC.Core;
 using System;
 using System.Text;
 using System.Windows.Forms;
@@ -47,6 +49,9 @@ namespace POC
             btnConnect.Text = "Disconnect";
             txtSendMessage.Enabled = true;
             btnSend.Enabled = true;
+
+            var hello = new Hello(OpCode.Hello);
+            _socket.Send(JsonConvert.SerializeObject(hello));
         }
 
         private void BtnConnect_Click(object sender, EventArgs e)

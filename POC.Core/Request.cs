@@ -1,6 +1,4 @@
-﻿
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace POC.Core
 {
@@ -9,6 +7,7 @@ namespace POC.Core
         [JsonProperty]
         public OpCode Op { get; private set; }
 
+        [JsonConstructor]
         protected Request(OpCode op)
             => Op = op;
     }

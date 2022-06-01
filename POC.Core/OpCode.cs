@@ -2,7 +2,7 @@
 {
     public enum OpCode
     {
-        hello = 0
+        Hello = 0
 
     }
 }

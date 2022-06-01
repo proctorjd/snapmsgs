@@ -17,3 +17,6 @@ C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.pdb
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.genruntimeconfig.cache
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\ref\POC.dll
 C:\Users\paula\Documents\snapmsgs\POC\obj\Debug\net6.0-windows\POC.Chat.resources
+C:\Users\paula\Documents\snapmsgs\POC\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\paula\Documents\snapmsgs\POC\bin\Debug\net6.0-windows\POC.Core.dll
+C:\Users\paula\Documents\snapmsgs\POC\bin\Debug\net6.0-windows\POC.Core.pdb

@@ -1,0 +1,12 @@
+C:\Users\paula\Documents\snapmsgs\POC.Core\bin\Debug\net6.0\POC.Core.deps.json
+C:\Users\paula\Documents\snapmsgs\POC.Core\bin\Debug\net6.0\POC.Core.dll
+C:\Users\paula\Documents\snapmsgs\POC.Core\bin\Debug\net6.0\POC.Core.pdb
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.csproj.AssemblyReference.cache
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.AssemblyInfoInputs.cache
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.AssemblyInfo.cs
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.csproj.CoreCompileInputs.cache
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.dll
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\refint\POC.Core.dll
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\POC.Core.pdb
+C:\Users\paula\Documents\snapmsgs\POC.Core\obj\Debug\net6.0\ref\POC.Core.dll
