@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FH7Gf3UQV2qDtJuS5DP+cMRELcZMquAsasKXGrct/C/P1Yj2CTv3cVHQp92GBUPhn8DoUvZF+3KnWN6ih/naOw==",
+  "dgSpecHash": "gQFlSEyA6Y5HJ7sCxP4cA6x+mrFa1BQxmZGXhsbeJI75O3bH5TnYCgEP6oN4+mD54uzYXBJIQetjtzsJJRi5Ag==",
   "success": true,
   "projectFilePath": "C:\\Users\\paula\\Documents\\snapmsgs\\POC_Server\\POC_Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\paula\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\paula\\.nuget\\packages\\websocketsharp-netstandard\\1.0.1\\websocketsharp-netstandard.1.0.1.nupkg.sha512"
   ],
   "logs": []
