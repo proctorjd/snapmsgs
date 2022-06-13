@@ -12,16 +12,11 @@ namespace POC_Server
     public class Chat: WebSocketBehavior
 
     {
-        protected override void OnOpen()
-        {
-            Console.WriteLine($"Client Connected: {ID}");
+        private string Header(string id = null) => String.Format("{0} - {1}:", DateTime.UtcNow.ToString("mm: hh tt"), id ?? ID);
 
-        }
+        protected override void OnOpen() => Console.WriteLine($"Client Connected: {ID}");
 
-        protected override void OnClose(CloseEventArgs e)
-        { 
-            Console.WriteLine($"Client Disconnected: {ID}");
-        }
+        protected override void OnClose(CloseEventArgs e) => Console.WriteLine($"Client Disconnected: {ID}");
 
         protected override void OnError(WebSocketSharp.ErrorEventArgs e)
         {
@@ -33,23 +28,13 @@ namespace POC_Server
         {
             Console.WriteLine($"Server received message from: {ID}: {e.Data}");
 
-            var output = new StringBuilder()
-            .AppendFormat("{0} - {1}:", DateTime.UtcNow.ToString("mm: hh tt"), ID).AppendLine()
-            .AppendLine(e.Data);
+            //var output = new StringBuilder()
+            //.AppendFormat("{0} - {1}:", DateTime.UtcNow.ToString("mm: hh tt"), ID).AppendLine()
+            //.AppendLine(e.Data);
 
             ParseJson(e.Data);
             //Sessions.Broadcast(output.ToString());
             ///Sessions.Broadcast(e.Data);
-
-        }
-
-        private string Header ()
-        {
-            return String.Format("{0} - {1}:", DateTime.UtcNow.ToString("mm: hh tt"), ID);
-        }
-
-        private void Broadcast()
-        {
 
         }
 
@@ -64,6 +49,7 @@ namespace POC_Server
 
 
                     var output = new StringBuilder()
+                    .AppendLine(Header("Server"))
                     .AppendFormat("There are so many users logged in!", Sessions.Count).AppendLine()
                     .AppendLine();
 
@@ -77,12 +63,17 @@ namespace POC_Server
 
                       Send(output.ToString());
 
-                    Sessions.Broadcast($"User joined servier ID: {ID}");
+                    Sessions.Broadcast($"{Header("Server") + Environment.NewLine} User joined servier ID: {ID}");
 
                     break;
-                default:
-                    break;
+                // default:
+                // Send(JsonConvert.SerializeObject(new Message(OpCode.Message, Header("Server") + "Message Received: " + json)));
+                //break;
 
+                case OpCode.Message:
+                    var msg = JsonConvert.DeserializeObject<Message>(json);
+                    Sessions.Broadcast(Header() + Environment.NewLine + msg.Text);
+                    break;
             }
 
         }
